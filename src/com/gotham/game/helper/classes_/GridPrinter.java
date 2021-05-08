@@ -1,17 +1,14 @@
-package com.gotham.game.classes_;
+package com.gotham.game.helper.classes_;
 
-import com.gotham.game.interfaces_.GridPrinter;
-import com.gotham.game.interfaces_.Weapon;
+import com.gotham.game.interfaces_.Printer;
+import com.gotham.game.main.classes_.Grid;
 
 import java.util.stream.IntStream;
 
-public class User extends Grid implements Weapon {
-            
-    public User(){
-        
-    }
+public class GridPrinter extends Grid implements Printer {
     
-    GridPrinter printer = (grid) -> {
+    @Override
+    public void print(char[][] grid) {
 
         int i = 0;
         System.out.print(" ");
@@ -29,12 +26,5 @@ public class User extends Grid implements Weapon {
 
         }
         
-    };
-    
-    
-    @Override
-    public boolean fire() {
-        printer.print(new Grid().battlefield);
-        return false;
     }
 }

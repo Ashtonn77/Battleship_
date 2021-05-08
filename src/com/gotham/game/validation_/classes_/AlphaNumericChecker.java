@@ -1,6 +1,5 @@
 package com.gotham.game.validation_.classes_;
 
-import com.gotham.game.classes_.Grid;
 import com.gotham.game.validation_.interfaces_.Validator;
 
 public class AlphaNumericChecker implements Validator {

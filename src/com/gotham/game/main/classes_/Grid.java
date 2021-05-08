@@ -1,11 +1,11 @@
-package com.gotham.game.classes_;
+package com.gotham.game.main.classes_;
 
 import com.gotham.game.interfaces_.GridFiller;
 
 public class Grid {
 
     public static final int GRID_SIZE = 10;
-    char[] firstColumn = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    protected char[] firstColumn = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
     
     protected char[][] battlefield;
     protected int[][] hitGrid;

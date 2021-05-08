@@ -1,6 +1,6 @@
 package com.gotham.game.interfaces_;
 
-public interface GridPrinter {
+public interface Printer {
     
     void print(char[][] grid);
     

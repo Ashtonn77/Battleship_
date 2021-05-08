@@ -1,6 +1,6 @@
 package com.gotham.game.validation_.classes_;
 
-import com.gotham.game.classes_.Grid;
+import com.gotham.game.main.classes_.Grid;
 import com.gotham.game.validation_.interfaces_.Validator;
 
 public class BoundaryValidator implements Validator {
