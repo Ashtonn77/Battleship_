@@ -8,8 +8,7 @@ public class User implements Weapon {
     public User(){
         
     }
-    
-    
+        
     @Override
     public boolean fire() {
           

@@ -5,26 +5,54 @@ import com.gotham.game.main.classes_.Grid;
 
 import java.util.stream.IntStream;
 
-public class GridPrinter extends Grid implements Printer {
+public class GridPrinter implements Printer{
     
-    @Override
-    public void print(char[][] grid) {
+    Grid grid;    
+    public GridPrinter(Grid grid){
+        this.grid = grid;
+    }
 
-        int i = 0;
+    @Override
+    public void print(int[][] board) {
+
+        int j = 0;
         System.out.print(" ");
         IntStream.rangeClosed(1, 10).forEach(k -> System.out.print(" " + k));
-        System.out.println("");
+        System.out.println();
 
-        for(var row : grid){
+        for(var row : board){
 
-            System.out.print(firstColumn[i++]);
+            System.out.print(grid.getFirstColumn()[j++]);
 
             for(var col : row)
                 System.out.print(" " + col);
 
-            System.out.println("");
+            System.out.println();
 
         }
         
     }
+
+    @Override
+    public void print(char[][] board) {
+
+        int i = 0;
+        System.out.print(" ");
+        IntStream.rangeClosed(1, 10).forEach(k -> System.out.print(" " + k));
+        System.out.println();
+
+        for(var row : board){
+
+            System.out.print(grid.getFirstColumn()[i++]);
+
+            for(var col : row)
+                System.out.print(" " + col);
+
+            System.out.println();
+
+        }
+        
+    }
+
+
 }

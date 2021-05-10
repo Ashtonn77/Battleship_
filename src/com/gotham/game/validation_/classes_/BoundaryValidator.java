@@ -8,10 +8,13 @@ public class BoundaryValidator implements Validator {
     @Override
     public boolean validate(int rowStart, int rowEnd, int columnStart, int columnEnd) {
         
-        return rowStart > 0 && rowStart < Grid.GRID_SIZE
-                && rowEnd > 0 && rowEnd < Grid.GRID_SIZE
-                && columnStart > 0 && columnStart < Grid.GRID_SIZE
-                && columnEnd > 0 && columnEnd < Grid.GRID_SIZE;
+        if(rowStart != rowEnd && columnStart != columnEnd)
+            return false;
+        
+        return rowStart >= 0 && rowStart < Grid.GRID_SIZE
+                && rowEnd >= 0 && rowEnd < Grid.GRID_SIZE
+                && columnStart >= 0 && columnStart < Grid.GRID_SIZE
+                && columnEnd >= 0 && columnEnd < Grid.GRID_SIZE;
         
     }
 
