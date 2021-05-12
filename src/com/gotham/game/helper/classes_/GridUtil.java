@@ -8,9 +8,11 @@ public class GridUtil implements Update {
     private int min;
     private int max;
     Grid grid;
+    ShipUtil shipUtil;
     
-    public GridUtil(Grid grid){
+    public GridUtil(Grid grid, ShipUtil shipUtil){
         this.grid = grid;
+        this.shipUtil = shipUtil;
     }
     
     public GridUtil(int min, int max){
@@ -39,7 +41,7 @@ public class GridUtil implements Update {
             for(int i = rows[0]; i <= rows[1]; i++)
                 for (int j = columns[0]; j <= columns[1]; j++) {
                     grid.getBattlefield()[i][j] = 'O';
-                    grid.getHitGrid()[i][j] = SetUp.shipSize;
+                    grid.getHitGrid()[i][j] = shipUtil.getShipIdx() < 1 ? 1 : shipUtil.getShipSize();
                 }
     }
 }

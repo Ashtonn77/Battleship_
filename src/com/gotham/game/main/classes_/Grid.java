@@ -5,9 +5,9 @@ import com.gotham.game.interfaces_.GridFiller;
 public class Grid {
 
     public static final int GRID_SIZE = 10;
-    private char[] firstColumn = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};    
-    private char[][] battlefield;
-    private int[][] hitGrid;
+    private final char[] firstColumn = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};    
+    private final char[][] battlefield;
+    private final int[][] hitGrid;
 
     public char[] getFirstColumn() {
         return firstColumn;
@@ -18,8 +18,6 @@ public class Grid {
     public int[][] getHitGrid() {
         return hitGrid;
     }
-
-    
 
     public Grid(){
         
