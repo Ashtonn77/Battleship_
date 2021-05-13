@@ -37,7 +37,7 @@ public class SetUp{
 
         try{
             //TODO: change to < 0
-            if(shipUtil.getShipIdx() < 0)
+            if(shipUtil.getShipIdx() < 4)
                 return;
 
             System.out.println(prompts[shipUtil.getShipIdx()]);
@@ -82,13 +82,10 @@ public class SetUp{
 
                 //TODO: display board
                new GridPrinter(gridInstance).print(gridInstance.getBattlefield());
-                System.out.println("-----------------------");
-               new GridPrinter(gridInstance).print(gridInstance.getHitGrid());
-
+   
+               
                int shipSize = shipUtil.getShipIdx() >= 2 ? shipUtil.getShipSize() - 1 : shipUtil.getShipSize();
-
                shipUtil.setShipIdx(shipUtil.getShipIdx() - 1);
-
                shipUtil.setShipSize(shipSize);
 
             }
@@ -98,7 +95,8 @@ public class SetUp{
         }catch(Exception e){ System.out.println("Hit"); }        
         
     }
-    
+
+    //TODO: duplicated code -> fix
     private void displayErrorMessageAndRerun(String message){
         System.out.println(message);
         placeShips();

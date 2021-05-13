@@ -7,7 +7,8 @@ public class Grid {
     public static final int GRID_SIZE = 10;
     private final char[] firstColumn = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};    
     private final char[][] battlefield;
-    private final int[][] hitGrid;
+    private final char[][] hitGrid;
+    private final int[][] pointGrid;
 
     public char[] getFirstColumn() {
         return firstColumn;
@@ -15,17 +16,20 @@ public class Grid {
     public char[][] getBattlefield() {
         return battlefield;
     }
-    public int[][] getHitGrid() {
+    public char[][] getHitGrid() {
         return hitGrid;
     }
+    public int[][] getPointGrid() { return pointGrid; }
 
     public Grid(){
         
         battlefield = new char[GRID_SIZE][GRID_SIZE];
-        hitGrid = new int[GRID_SIZE][GRID_SIZE];
+        hitGrid = new char[GRID_SIZE][GRID_SIZE];
+        pointGrid = new int[GRID_SIZE][GRID_SIZE];
         
         GridFiller.fill(battlefield);
         GridFiller.fill(hitGrid);
+        GridFiller.fill(pointGrid);
         
     }
     

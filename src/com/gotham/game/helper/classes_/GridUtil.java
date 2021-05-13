@@ -41,7 +41,7 @@ public class GridUtil implements Update {
             for(int i = rows[0]; i <= rows[1]; i++)
                 for (int j = columns[0]; j <= columns[1]; j++) {
                     grid.getBattlefield()[i][j] = 'O';
-                    grid.getHitGrid()[i][j] = shipUtil.getShipIdx() < 1 ? 1 : shipUtil.getShipSize();
+                    grid.getPointGrid()[i][j] = shipUtil.getShipIdx() < 1 ? 1 : shipUtil.getShipSize();
                 }
     }
 }
