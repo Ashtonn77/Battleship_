@@ -36,8 +36,8 @@ public class SetUp{
     public void placeShips(){
 
         try{
-            //TODO: change to < 0
-            if(shipUtil.getShipIdx() < 4)
+           
+            if(shipUtil.getShipIdx() < 0)
                 return;
 
             System.out.println(prompts[shipUtil.getShipIdx()]);
@@ -77,10 +77,10 @@ public class SetUp{
 
             else{                
 
-                //TODO: update board
+        
                new GridUtil(gridInstance, shipUtil).update(rowStart, rowEnd, columnStart, columnEnd);
 
-                //TODO: display board
+          
                new GridPrinter(gridInstance).print(gridInstance.getBattlefield());
    
                
@@ -96,7 +96,7 @@ public class SetUp{
         
     }
 
-    //TODO: duplicated code -> fix
+
     private void displayErrorMessageAndRerun(String message){
         System.out.println(message);
         placeShips();

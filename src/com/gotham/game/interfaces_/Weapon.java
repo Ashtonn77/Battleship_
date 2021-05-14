@@ -1,7 +1,9 @@
 package com.gotham.game.interfaces_;
 
+import com.gotham.game.main.classes_.User;
+
 public interface Weapon {
     
-    boolean fire();
+    void fire(User user);
     
 }
