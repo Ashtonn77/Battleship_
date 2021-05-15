@@ -11,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        
         ShipUtil shipUtil1 = new ShipUtil();
         ShipUtil shipUtil2 = new ShipUtil();
 
@@ -20,27 +21,21 @@ public class Main {
         User player1 = new User(1, gridInstance2, gridInstance1);
         User player2 = new User(2, gridInstance1, gridInstance2);
 
-        setUpPlayerOne(gridInstance1, shipUtil1);
+        setUpPlayer(
+                gridInstance1,
+                "Player 1, place your ships on the game field",
+                new SetUp(gridInstance1, shipUtil1)
+        );
+        
+        promptForNextPlayerStart();
 
-        System.out.println("Press Enter and pass the move to another player");
-        try {
-            System.in.read();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        System.out.println("\nPlayer 2, place your ships on the game field");
-        new GridPrinter(gridInstance2).print(gridInstance2.getBlankGrid());
-        SetUp s2 = new SetUp(gridInstance2, shipUtil2);
-        s2.placeShips();
-
-        System.out.println("Press Enter and pass the move to another player");
-        try {
-            System.in.read();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        setUpPlayer(
+                gridInstance2,
+                "\nPlayer 2, place your ships on the game field",
+                new SetUp(gridInstance2, shipUtil2)
+        );
+        
+        promptForNextPlayerStart();
 
         int i = 0;
         while (User.GAME_OVER != -1) {
@@ -56,14 +51,25 @@ public class Main {
 
     }
 
-    static void setUpPlayerOne(Grid gridInstance1, ShipUtil shipUtil1) {
+    private static void setUpPlayer(
+            Grid gridInstance1,
+            String message,
+            SetUp setUp
+    ) {
+        System.out.println(message);
+        new GridPrinter(gridInstance1).print(gridInstance1.getBlankGrid());    
+        setUp.placeShips();
 
+    }
 
-        System.out.println("Player 1, place your ships on the game field");
-        new GridPrinter(gridInstance1).print(gridInstance1.getBlankGrid());
-        SetUp s1 = new SetUp(gridInstance1, shipUtil1);
-        s1.placeShips();
-        return;
+    private static void promptForNextPlayerStart() {
+
+        System.out.println("Press Enter and pass the move to another player");
+        try {
+            System.in.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
